@@ -1,11 +1,11 @@
-class enterprise-dns {
+class enterprise_dns {
 
   $dnsserver1 = hiera('dnsserver1')
   $dnsserver2 = hiera('dnsserver2')
 
   file { '/opt/etc/resolv.conf':
     ensure => present,
-    content => template('enterprise-dns/resolv.conf.erb'),
+    content => template('enterprise_dns/resolv.conf.erb'),
     require => File['/opt/etc'],
   }
 
